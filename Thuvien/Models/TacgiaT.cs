@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Project4Thuvien.Areas.Page.Models
+namespace ThuVien.Areas.Page.Models
 {
     public class TacgiaT
     {

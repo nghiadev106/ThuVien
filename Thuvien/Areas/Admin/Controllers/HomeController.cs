@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Project4Thuvien.Models;
-using Project4Thuvien.Areas.Admin.Models;
+using ThuVien.Models;
+using ThuVien.Areas.Admin.Models;
 
-namespace Project4Thuvien.Areas.Admin.Controllers
+namespace ThuVien.Areas.Admin.Controllers
 {
     public class HomeController : NguoidungController
     {

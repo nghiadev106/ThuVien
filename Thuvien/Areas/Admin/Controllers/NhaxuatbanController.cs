@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Project4Thuvien.Models;
+using ThuVien.Models;
 
-namespace Project4Thuvien.Areas.Admin.Controllers
+namespace ThuVien.Areas.Admin.Controllers
 {
     public class NhaxuatbanController : NguoidungController
     {

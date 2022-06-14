@@ -1,4 +1,4 @@
-namespace Project4Thuvien.Models
+namespace ThuVien.Models
 {
     using System;
     using System.Data.Entity;

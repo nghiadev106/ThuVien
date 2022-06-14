@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Project4Thuvien.Controllers
+namespace ThuVien.Controllers
 {
     public class AboutController : Controller
     {

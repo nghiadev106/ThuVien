@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Project4Thuvien.Areas.Admin
+namespace ThuVien.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration 
     {
@@ -18,7 +18,7 @@ namespace Project4Thuvien.Areas.Admin
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-    new[] { "Project4Thuvien.Areas.Admin.Controllers" }
+    new[] { "ThuVien.Areas.Admin.Controllers" }
             );
         }
     }

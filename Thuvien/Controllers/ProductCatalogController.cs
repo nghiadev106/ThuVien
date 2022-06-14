@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Project4Thuvien.Models;
-using Project4Thuvien.Areas.Admin.Models;
+using ThuVien.Models;
+using ThuVien.Areas.Admin.Models;
 
-namespace Project4Thuvien.Controllers
+namespace ThuVien.Controllers
 {
     public class ProductCatalogController : Controller
     {

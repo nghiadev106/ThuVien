@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Project4Thuvien
+namespace ThuVien
 {
     public class RouteConfig
     {
@@ -21,9 +21,9 @@ namespace Project4Thuvien
 
             routes.MapRoute(
     "Default",
-    "{controller}/{action}/{id}",
-    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-    new[] { "Project4Thuvien.Controllers" }
+    "{area}/{controller}/{action}/{id}",
+    new { area = "Common", controller = "Home", action = "Index", id = UrlParameter.Optional },
+    new[] { "ThuVien.Areas.Admin.Controllers" }
 );
         }
     }

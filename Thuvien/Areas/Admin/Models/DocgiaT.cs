@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Project4Thuvien.Areas.Admin.Models
+namespace ThuVien.Areas.Admin.Models
 {
     public class DocgiaT
     {

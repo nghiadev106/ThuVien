@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Project4Thuvien.Models;
+using ThuVien.Models;
 
-namespace Project4Thuvien.Areas.Admin.Controllers
+namespace ThuVien.Areas.Admin.Controllers
 {
     public class TestTgController : Controller
     {

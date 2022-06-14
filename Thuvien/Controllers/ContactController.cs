@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Project4Thuvien.Models;
+using ThuVien.Models;
 
-namespace Project4Thuvien.Controllers
+namespace ThuVien.Controllers
 {
     public class ContactController : Controller
     {
