@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+		<!-- banner -->
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                world of reading
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center">
+    <div class="container">
+        <div class="row">
+            <ul class="btn-group btn-breadcrumb bc-list">
+                <li class="btn btn1">
+                    <a href="/Home">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                </li>
+                <li class="btn btn2">
+                    <a href="/ProductCart">Đăng kí mượn</a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</div>
+<!--//breadcrumbs ends here-->
+<!--Payment-->
+<div class="innerf-pages section">
+    <div class="container">
+        <div class="privacy about">
+            <h4 class="rad-txt">
+                <span class="abtxt1">Đăng kí</span>
+                <span class="abtext"> Mượn</span>
+            </h4>
+            <!--/tabs-->
+            <div class="responsive_tabs innfpage-tabs">
+                <div id="horizontalTab">
+                    <ul class="resp-tabs-list">
+                        <li>Tài liệu đã đăng kí</li>
+                        <li>Đăng kí mượn</li>
+                    </ul>
+                    <div class="resp-tabs-container">
+                        <!--/tab_one-->
+                        <div class="tab1">
+                            <div class="pay_info">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã cá biệt</th>
+                                            <th>Tên Tài liệu</th>
+                                            <th>Tác giả</th>
+                                            <th>Ảnh</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table1">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+
+                                    
+                        </div>
+                        <!--//tab_one-->
+                        <div class="tab2">
+                            <div class="pay_info">
+                                <form action="#" method="post" class="creditly-card-form shopf-sear-headinfo_form">
+                                    <section class="creditly-wrapper payf_wrapper">
+                                        <div class="credit-card-wrapper">
+                                            <div class="first-row form-group">
+                                                <div class="controls">
+                                                    <label class="control-label">Name on Card</label>
+                                                    <input class="billing-address-name form-control" type="text" name="name" placeholder="John Smith">
+                                                </div>
+                                                <div class="paymntf_card_number_grids">
+                                                    <div class="fpay_card_number_grid_left">
+                                                        <div class="controls">
+                                                            <label class="control-label">Card Number</label>
+                                                            <input class="number credit-card-number form-control" type="text" name="number" inputmode="numeric" autocomplete="cc-number"
+                                                                   autocompletetype="cc-number" x-autocompletetype="cc-number" placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="fpay_card_number_grid_right">
+                                                        <div class="controls">
+                                                            <label class="control-label">CVV</label>
+                                                            <input class="security-code form-control" Â· inputmode="numeric" type="text" name="security-code" placeholder="&#149;&#149;&#149;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"> </div>
+                                                </div>
+                                                <div class="controls">
+                                                    <label class="control-label">Expiration Date</label>
+                                                    <input class="expiration-month-and-year form-control" type="text" name="expiration-month-and-year" placeholder="MM / YY">
+                                                </div>
+                                            </div>
+                                            <button class="submit">
+                                                <span>Make payment </span>
+                                            </button>
+                                        </div>
+                                    </section>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//tabs-->
+        </div>
+
+    </div>
+</div>
+<!-- //payment -->
+<script>
+    $(document).ready(function () {
+        _getdanhsach();
+    });
+</script>
+<script src="~/scripts/Cart.js"></script>

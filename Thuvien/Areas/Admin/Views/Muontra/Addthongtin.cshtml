@@ -1,0 +1,348 @@
+﻿
+@{
+    ViewBag.Title = "Addthongtin";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Project4Thuvien.Models.sach>
+
+<section class="content-header">
+    <h1>
+        Phiếu mượn
+        <small>lập phiếu</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        @*<li><a href="#">Tables</a></li>*@
+        <li class="active">Phiếu mượn</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+      
+        <div class="col-xs-4">
+            <div class="box">
+                <div class="box-header">
+                    <div class="form-inline">
+                        <div class="input-group">
+                            <span class="input-group-addon">Mã cá biệt</span>
+                            <input type="text" class="form-control" id="macabiet"  name="macabiet" placeholder="mã cá biệt">
+                            @*<span class="glyphicon glyphicon-remove form-control-feedback"></span>*@
+                        </div>
+                        <button type="button" onclick="return _muonsach()" class="btn btn-default">Mượn</button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Mã cá biệt</th>
+                                <th>Tên Tài liệu</th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table1"></tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="box">
+                <div class="box-header">
+                    Lập phiếu
+                </div>
+                <!-- /.box-header -->
+                <div class="form-horizontal">
+                    <div class="box-body">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Độc giả *</label>
+                                <div class="col-sm-8">
+                                    @Html.DropDownList("sothe", null, htmlAttributes: new { @class = "form-control select2" })
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn label label-default" onclick="return _getsothe()">kiểm tra</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Hạn trả *</label>
+                                <div class="col-sm-10">
+                                    <input type="date" name="hantra" value="" class="form-control" id="hantra">
+
+                                    <span class="label label-danger" id="er_hantra"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Ghi chú</label>
+                                <div class="col-sm-10">
+
+                                    <textarea rows="3" name="ghichu" id="ghichu" class="form-control"></textarea>
+                                    <span class="label label-danger" id="er_ghichu"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success" onclick="return _dangki()"> Đăng kí</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">mã cá biệt</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Mã cá biệt</th>
+                            <th>Tài liệu</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Thông tin thẻ</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Số thẻ</th>
+                            <th>Họ tên</th>
+                            <th>chức vụ</th>
+                            <th>Tiền thẻ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_tt"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script>
+    $(document).ready(function () {
+        _getdanhsach();
+    });
+
+    function _error() {
+        // Bước 1: Lấy giá trị của username và password
+        var hantra = $('#hantra').val();
+        var kt = true;
+        // Bước 2: Kiểm tra dữ liệu hợp lệ hay không
+
+        if (hantra == '') {
+            $('#er_hantra').html('Bạn chọn hạn trả');
+            kt = false;
+        } else $('#er_hantra').html('');
+        return kt;
+    }
+
+    function _getmsb(id) {
+        $.ajax({
+            url: '@Url.Action("GetMCB", "Muontra")',
+            type: 'post',
+            datatype: 'json',
+            data: {
+                masach: id
+            },
+            success: function (data) {
+                var html = '';
+                var stt = 0;
+                $.each(data.dt, function (key, item) {
+                    html += '<tr>';
+                    html += '<td>' + item.macabiet + '</td>';
+                    if (item.trangthai == true) {
+                        html += '<td><label class="label label-success">chưa mượn</label></td>';
+                        html += '<td><button type="button" class="label label-default btn-link" onclick="return _muonsach(' + item.macabiet + ');" >mượn</button></td>';
+                    }
+                    if (item.trangthai == false) {
+                        html += '<td><label class="label label-danger">đã được mượn</label></td>';
+                    }
+
+                    html += '</tr>';
+                });
+                $('#table').html(html);
+                $('#myModal').modal('show');
+                _getdanhsach();
+            },
+            error: function (data) {
+                alert('xảy ra lỗi');
+            }
+
+        });
+    }
+    function _getsothe() {
+        var sothe = $('#sothe').val();
+        $.ajax({
+            url: '@Url.Action("GetSothe", "Muontra")',
+            type: 'post',
+            datatype: 'json',
+            data: {
+                sothe: sothe
+            },
+            success: function (data) {
+                var html = '';
+                html += '<tr>';
+                html += '<td>' + data.dt.sothe + '</td>';
+                html += '<td>' + data.dt.tendocgia + '</td>';
+                html += '<td>' + data.dt.tenloai + '</td>';
+                html += '<td>' + data.dt.tienthe + '</td>';
+                html += '</tr>';
+
+                $('#table_tt').html(html);
+                $('#myModal1').modal('show');
+                _getdanhsach();
+            },
+            error: function (data) {
+                alert('xảy ra lỗi');
+            }
+
+        });
+    }
+    function _getdanhsach() {
+        $.ajax({
+            url: '@Url.Action("Getdanhsach", "Muontra")',
+            type: 'post',
+            datatype: 'json',
+            success: function (data) {
+                var html = '';
+                if (data.success == true) {
+
+                    $.each(data.dt, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.macabiet + '</td>';
+                        html += '<td>' + item.tensach + '</td>';
+                        html += '<td><button type="button" class="label label-danger btn-link" onclick="return _delete(' + item.macabiet + ');" ><i class="fa fa-times"></i></button></td>';
+                        html += '</tr>';
+                    });
+                    $('#table1').html(html);
+                }
+                else {
+                    html += '<tr>';
+                    html += '<td colspan="3">chưa có tài liệu nào được chọn</td>';
+                    html += '</tr>';
+                    $('#table1').html(html);
+                }
+            },
+            error: function (data) {
+                alert('xảy ra lỗi');
+            }
+
+        });
+    }
+
+
+    function _muonsach() {
+        var mcb = $('#macabiet').val();
+        $.ajax({
+            url: '@Url.Action("Muonsach", "Muontra")',
+            type: 'post',
+            datatype: 'json',
+            data: {
+                macabiet: mcb
+            },
+            success: function (data) {
+                if (data.success == false) {
+                    alert(data.ms);
+                }
+                _getdanhsach();
+                //_getmsb(data.dt.masach);
+
+
+            },
+            error: function (data) {
+                alert('xảy ra lỗi');
+            }
+        });
+    }
+
+    function _delete(mcb) {
+        $.ajax({
+            url: '@Url.Action("Delete", "Muontra")',
+            type: 'post',
+            datatype: 'json',
+            data: {
+                macabiet: mcb
+            },
+            success: function (data) {
+                if (data.success == false) {
+                    alert('xảy ra lỗi khi truy cập dữ liệu');
+                }
+                _getdanhsach();
+            },
+            error: function (data) {
+                alert('xảy ra lỗi');
+            }
+        });
+    }
+
+    function _dangki() {
+        var sothe = $('#sothe').val();
+        var hantra = $('#hantra').val();
+        var ghichu = $('#ghichu').val();
+
+        _error();
+        if (_error()) {
+            $.ajax({
+                url: '@Url.Action("Dangki", "Muontra")',
+                type: 'POST',
+                datatype: 'JSON',
+                data: {
+                    sothe: sothe,
+                    hantra: hantra,
+                    ghichu: ghichu
+                },
+                success: function (data) {
+                    if (data.success == true) {
+                        alert(data.ms);
+                    }
+                    if (data.success == false) {
+                        alert(data.ms);
+                    }
+                },
+                error: function (data) {
+                    alert('xảy ra lỗi');
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,279 @@
+﻿@model Project4Thuvien.Models.tacgia
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Deltail
+        <small>advanced @Model.tentacgia</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tác giả</a></li>
+        <li class="active">Deltail</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-md-3">
+
+                    <!-- Profile Image -->
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">
+                            <img class="profile-user-img img-responsive img-circle" src="~/Images/Tacgia/@Model.imgurl" alt="User profile picture">
+
+                            <h3 class="profile-username text-center">@Model.tentacgia</h3>
+
+                            @if (Model.gioitinh == true)
+                            {
+                                <p class="text-muted text-center"><i class="fa fa-mars"></i> Nam</p>
+                            }
+                            else
+                            {
+                                <p class="text-muted text-center"><i class="fa fa-mars-stroke"></i> Nữ</p>
+                            }
+
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>Năm sinh</b> <a class="pull-right">@Model.namsinh</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Nguyên quán</b> <a class="pull-right">@Model.nguyenquan</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Tài liệu</b> <a class="pull-right">@Model.saches.Count() Cuốn</a>
+                                </li>
+                            </ul>
+
+                            <button title="Sửa @Model.tentacgia" type="button" class="col-lg-4 pull-right btn btn-success btn-sm fa fa-pencil-square-o" data-toggle="modal" data-target="#myModal" onclick="return _getById('@Model.matacgia');"> cập nhập</button>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#timeline" data-toggle="tab">Tài liệu liên quan</a></li>
+                            <li><a href="#activity" data-toggle="tab">Giới thiệu</a></li>
+                            
+                            @*<li><a href="#settings" data-toggle="tab">Settings</a></li>*@
+                        </ul>
+                        <div class="tab-content">
+                            <!-- /.tab-pane -->
+                            <div class="active tab-pane" id="timeline">
+
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên tài liệu</th>
+                                            <th>ISBN</th>
+                                            <th>Ngày thêm</th>
+                                            <th>Số Trang</th>
+                                            <th>Năm xuất bản</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            foreach (var item in Model.saches)
+                                            {
+
+                                                <tr>
+                                                    <td>@item.tensach</td>
+                                                    <td>
+                                                        @item.ISBN
+                                                    </td>
+                                                    <td>@string.Format("{0:dd-MM-yyyy}", item.ngaythem)</td>
+                                                    <td>@item.sotrang</td>
+                                                    <td>@item.namxuatban</td>
+                                                    <td><a href="@Url.Action("Deltai","Tailieu",new { id=item.masach})" class="btn btn-info fa fa-info-circle"></a></td>
+                                                </tr>
+                                            }
+                                        }
+    
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="activity">
+                                <p>@Html.Raw(Model.gioithieu)</p>
+                            </div>
+
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @using (Html.BeginForm("Edit", "Tacgia", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Sửa thông tin tác giả</h4>
+                </div>
+                <div class="modal-body">
+
+                    <input type="text" id="matacgia" name="matacgia" class="form-control" />
+                    <br />
+                    <label>Tên tác giả</label>
+                    <input type="text" id="tentacgia" name="tentacgia" class="form-control" />
+                    <label class="label label-danger" id="er_tentacgia"></label>
+                    <br />
+                    <label>Gioi tính</label>
+                    @*<input type="radio" name="gioitinh" value="true" />Nam
+                    <input type="radio" name="gioitinh" value="false" />Nữ*@
+                    <select name="gioitinh" class="form-control">
+                        <option @Html.Raw(ViewBag.nam) value="true">Nam</option>
+                        <option @Html.Raw(ViewBag.nu) value="false">Nữ</option>
+                    </select>
+                    <label class="label label-danger" id="er_gioitinh"></label>
+                    <br />
+                    <label>Năm sinh</label>
+                    <input type="text" id="namsinh" name="namsinh" class="form-control">
+                    <label class="label label-danger" id="er_namsinh"></label>
+                    <br />
+                    <label>Nguyên quán</label>
+                    <input type="text" id="nguyenquan" name="nguyenquan" class="form-control" />
+                    <label class="label label-danger" id="er_nguyenquan"></label>
+                    <br />
+                    <label>Ảnh đại diện</label>
+                    <input type="file" id="anh" name="anh" class="form-control" />
+                    <label class="label label-danger" id="er_anh"></label>
+                    <br />
+                    <label>Giới thiệu</label>
+                    <textarea cols="4" rows="3" id="editor1" name="gioithieu">@Html.Raw(Model.gioithieu)</textarea>
+                    <label class="label label-danger" id="er_ghichu"></label>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" onclick="return _error()" class="btn btn-primary">Save changes</button>
+                    </div>
+            }
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script>
+    $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('editor1')
+        //bootstrap WYSIHTML5 - text editor
+        $('.textarea').wysihtml5()
+    })
+</script>
+<script language="javascript">
+    function _error() {
+        // Bước 1: Lấy giá trị của username và password
+        var matacgia = $('#matacgia').val();
+        var tentacgia = $('#tentacgia').val();
+        var namsinh = $('#namsinh').val();
+        var nguyenquan = $('#nguyenquan').val();
+        var anh = $('#anh').val();
+        var ghichu = $('#ghichu').val();
+        var kt = true;
+        // Bước 2: Kiểm tra dữ liệu hợp lệ hay không
+        if (matacgia == '') {
+            alert('không thể sửa thông tin');
+            kt = false;
+        }
+        else {
+            $('#er_matacgia').html('');
+        }
+
+        if (tentacgia == '') {
+            $('#er_tentacgia').html('Bạn chưa nhập tên tac gia');
+            kt = false;
+        } else $('#er_tentacgia').html('');
+
+        if (namsinh == '') {
+            $('#er_namsinh').html('bạn chưa chọn ngày sinh');
+
+            kt = false;
+        }
+
+        else {
+            if (!checknumber(namsinh)) {
+                $('#er_namsinh').html('đây không phải năm sinh');
+            } else
+                $('#er_namsinh').html('');
+        }
+
+        if (nguyenquan == '') {
+            $('#er_nguyenquan').html('bạn chưa nhập nguyên quán');
+            kt = false;
+        }
+        else $('#er_nguyenquan').html('');
+
+        if (anh == '') {
+            //$('#er_anh').html('Bạn chưa chọn ảnh đại diện');
+
+        } else $('#er_anh').html('');
+
+
+        return kt;
+    }
+
+
+    function _getById(id) {
+        $('#matacgia').hide();
+        /////////////
+        $('#er_matacgia').html('');
+        $('#er_tentacgia').html('');
+        $('#er_namsinh').html('');
+        $('#er_nguyenquan').html('');
+        $('#er_anh').html('');
+
+        ////////////////
+        $.ajax({
+            url: '/Tacgia/Get/' + id,
+            // data: JSON.stringify(dto),
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                $('#matacgia').val(result.matacgia);
+                $('#tentacgia').val(result.tentacgia);
+                $('#namsinh').val(result.namsinh);
+                //let today = new Date(result.namsinh).toISOString().substr(0, 10);
+                //document.querySelector("#namsinh").value = today;
+                $('#nguyenquan').val(result.nguyenquan);
+                //$("#ghichu").val(result.ghichu);
+
+
+                $('#myModal').modal('show');
+                $('#add').hide();
+                $('#edit').show();
+                $('.modal-title').html('Sửa bản ghi');
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+        return false;
+    }
+
+</script>

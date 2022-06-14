@@ -1,0 +1,231 @@
+﻿
+@{
+    ViewBag.Title = "Chitiettailieu";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    var sanpham = (List<Project4Thuvien.Models.sach>)ViewBag.sanpham;
+}
+@model Project4Thuvien.Models.sach
+
+		<!-- banner -->
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                THƯ VIỆN UTEHY
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center">
+    <div class="container">
+        <div class="row">
+            <ul class="btn-group btn-breadcrumb bc-list">
+                <li class="btn btn1">
+                    <a href="/Home">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                </li>
+                <li class="btn btn2">
+                    <a href="/ProductCatalog">Danh mục tài liệu</a>
+                </li>
+                <li class="btn btn3">
+                    <a href="#">Chi tiết tài liệu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--//breadcrumbs ends here-->
+<!-- Single -->
+<div class="innerf-pages section">
+    <div class="container">
+        <div class="col-md-4 single-right-left ">
+            <div class="grid images_3_of_2">
+                <div class="flexslider1">
+                    <ul class="slides">
+                        <li data-thumb="~/Images/sach/@Model.imgurl">
+                            <div class="thumb-image">
+                                <img src="~/Images/sach/@Model.imgurl" data-imagezoom="true" alt=" " class="img-responsive">
+                            </div>
+                        </li>
+                        @*<li data-thumb="/Areas/Asset/images/s2.jpg">
+                            <div class="thumb-image">
+                                <img src="/Areas/Asset/images/s2.jpg" data-imagezoom="true" alt=" " class="img-responsive">
+                            </div>
+                        </li>
+                        <li data-thumb="/Areas/Asset/images/s3.png">
+                            <div class="thumb-image">
+                                <img src="/Areas/Asset/images/s3.png" data-imagezoom="true" alt=" " class="img-responsive">
+                            </div>
+                        </li>*@
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8 single-right-left simpleCart_shelfItem">
+            <h3>
+                @Model.tensach
+                @*<span>Hardcover – Feb 2018</span>*@
+            </h3>
+            <p>
+                by
+                <a href="#">@Model.tacgia.tentacgia</a>
+            </p>
+            <div class="caption">
+
+               
+                <div class="clearfix"> </div>
+                <h6>
+                    @Model.giabia.ToString("#,##0").Replace(',', '.') VNĐ 
+                </h6>
+            </div>
+            <div class="desc_single">
+                <h5>Miêu tả</h5>
+                @Html.Raw(Model.tomtatnoidung)
+            </div>
+            <div class="occasional">
+                <h5>Thông tin</h5>
+                <ul class="single_specific">
+                    <li>
+                        <span>Ngôn ngữ :</span> @Model.ngonngu.tenngonngu
+                    </li>
+                    <li>
+                        <span>Thể loại :</span> @Model.theloai.tentheloai
+                    </li>
+                    <li>
+                        <span>Nhà xuất bản :</span> @Model.nxb.tennxb
+                    </li>
+                    <li>
+                        <span>Năm xuất bản :</span> @Model.namxuatban
+                    </li>
+                    <li>
+                        <span>Số lần tài bản :</span> @Model.solantaiban
+                    </li>
+                    <li>
+                        <span>Trang :</span> @Model.sotrang
+                    </li>
+                    <li>
+                        <span>Còn :</span> @Model.kihieucabiets.Where(x=>x.trangthai==true).Count() / @Model.kihieucabiets.Count()
+                    </li>
+                </ul>
+
+            </div>
+            
+            <div class="clearfix"></div>
+            
+            <div class="occasion-cart">
+                <div class="chr single-item single_page_b">
+                        @*<button type="button"onclick="return _getmsb('@Model.masach')"  name="submit"class="chr-cart pchr-cart">
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart
+                        </button>*@
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+		<!-- /new_arrivals -->
+<div class="container">
+    <div id="fb-root"></div>
+    <script>
+(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=2059535497652523';
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- <div class="fb-comments" href="" data-width="100%" data-numposts="5">
+        </div> -->
+    <div class="fb-comments" href="http://localhost:24999/ProductCatalog/Chitiettailieu/@Model.masach" width="100%" data-numposts="5"></div>
+</div>
+<div class="section singlep_btm">
+    <div class="container">
+        <div class="new_arrivals">
+            <h4 class="rad-txt">
+                <span class="abtxt1">Có thể</span>
+                <span class="abtext"> bạn quan tâm</span>
+            </h4>
+            @foreach (var item in sanpham)
+            {
+                            <!-- row3 -->
+                <div class="col-md-3 product-men">
+                    <div class="product-chr-info chr">
+                        <div class="thumbnail">
+                            <a href="@Url.Action("Chitiettailieu", "ProductCatalog",new { id=item.masach})">
+                                <img src="~/Images/sach/@item.imgurl"style="width:226px;height:290px" alt="">
+                            </a>
+                        </div>
+                        <div class="caption">
+                            <h4>@item.tensach.ToString().Substring(0, (item.tensach.Length > 20) ? 20 : item.tensach.Length) ..</h4>
+                            <p>@item.theloai.tentheloai</p>
+                            <div class="matrlf-mid">
+                                
+                                <ul class="price-list">
+                                    <li>@Model.giabia.ToString("#,##0").Replace(',', '.') VNĐ </li>
+                                    <li>
+                                        @Model.kihieucabiets.Where(x => x.trangthai == true).Count() / @Model.kihieucabiets.Count()
+                                    </li>
+                                </ul>
+
+                                <div class="clearfix"> </div>
+                            </div>
+                            @*<button type="button" onclick="return _getmsb('@item.masach')" name="submit" class="chr-cart pchr-cart">
+                                <i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart
+                            </button>*@
+                        </div>
+                    </div>
+                </div>
+            <!-- //row3 -->
+            }
+
+            <div class="clearfix"></div>
+        </div>
+        <!--//new_arrivals-->
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+<!--// Single -->
+
+<!-- /.modal-dialog -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">mã cá biệt</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Mã cá biệt</th>
+                            <th>Tài liệu</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="~/scripts/Cart.js"></script>

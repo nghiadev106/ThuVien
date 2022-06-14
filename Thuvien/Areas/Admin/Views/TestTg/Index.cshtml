@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Project4Thuvien.Models.tacgia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tentacgia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gioitinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.namsinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nguyenquan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ghichu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tentacgia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gioitinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.namsinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nguyenquan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ghichu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.matacgia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.matacgia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.matacgia })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Project4Thuvien.Models.sach
+
+
+<section class="content-header">
+    <h1>
+        Nhập thông tin về sách
+        <small>advanced Create</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tài liệu</a></li>
+        <li class="active">Create</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    @using (Html.BeginForm("Create", "Tailieu", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="box box-info">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Form</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <div class="form-horizontal">
+                                <div class="box-body">
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">ISBN</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="isbn" value="" class="form-control" id="isbn">
+                                                <span class="label label-danger" id="er_isbn"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Tên tài liệu *</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="tensach"  value="" class="form-control" id="tensach">
+
+                                                <span class="label label-danger" id="er_tensach"></span>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Số trang</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="sotrang" value="" class="form-control" id="sotrang">
+                                                <span class="label label-danger" id="er_sotrang"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Nãm xuất bản</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="namxuatban" value="" class="form-control" id="namxuatban">
+
+                                                <span class="label label-danger" id="er_namxuatban"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Số lần tái bản</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="solantaiban" value="" class="form-control" id="solantaiban">
+
+                                                <span class="label label-danger" id="er_solantaiban"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Giá bìa</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="giabia" class="form-control" value="" id="giabia">
+
+                                                <span class="label label-danger"id="er_giabia"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Ảnh</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" name="imgurl" class="form-control" size="20" id="anh">
+                                                <span class="label label-danger"id="er_imgurl"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Kho</label>
+                                            <div class="col-sm-10">
+                                                @Html.DropDownList("makho", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Tác giả</label>
+                                            <div class="col-sm-10">
+                                                @Html.DropDownList("matacgia", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Ngôn ngữ</label>
+                                            <div class="col-sm-10">
+                                                @Html.DropDownList("mangonngu", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Nhà cung cấp</label>
+                                            <div class="col-sm-10">
+                                                @Html.DropDownList("mancc", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Nhà xuất bản</label>
+                                            <div class="col-sm-10">
+                                                @Html.DropDownList("manxb", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Thể loại</label>
+                                            <div class="col-sm-10">
+                                                @Html.DropDownList("matheloai", null, htmlAttributes: new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-10 col-sm-offset-2">
+                                                <button type="reset" class="btn btn-success pull-right btn-sm">Làm lại</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="box box-info">
+                                    <div class="box-header">
+                                        <h3 class="box-title">
+                                            Nội dung
+                                        </h3>
+                                        <!-- tools box -->
+                                        <!-- /. tools -->
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body pad">
+                                        <textarea id="tomtatnoidung" name="tomtatnoidung" value="" rows="10" cols="80"></textarea>
+
+                                        <span class="label label-danger" id="er_tomtatnoidung"></span>
+
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer">
+                                    <a href="index.php?page=Sach" class="btn btn-primary fa fa-backward" onclick="return confirmAction()"> danh sách bài viết</a>
+                                    <button type="submit" class="btn btn-info fa fa-save pull-right" name="cmd" onclick="return confirmAction()">Thêm mới</button>
+                                </div>
+                                <!-- /.box-footer -->
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<script>
+    $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('tomtatnoidung')
+        //bootstrap WYSIHTML5 - text editor
+        $('.textarea').wysihtml5()
+    })
+</script>

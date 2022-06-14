@@ -1,0 +1,116 @@
+﻿
+@{
+    Layout = null;
+}
+
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">MAIN NAVIGATION</li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("Index","Kho")"><i class="fa fa-circle-o"></i> Kho</a></li>
+            <li><a href="@Url.Action("Index","tailieu")"><i class="fa fa-circle-o"></i> Tài liệu</a></li>
+            <li><a href="@Url.Action("Index","Tacgia")"><i class="fa fa-circle-o"></i> Tác giả</a></li>
+            <li><a href="@Url.Action("Index","Theloai")"><i class="fa fa-circle-o"></i> Thể loại</a></li>
+            <li><a href="@Url.Action("Index","Ngonngu")"><i class="fa fa-circle-o"></i> Ngôn ngữ</a></li>
+            <li><a href="@Url.Action("Index","Nhacungcap")"><i class="fa fa-circle-o"></i> Nhà cung cấp</a></li>
+            <li><a href="@Url.Action("Index","Nhaxuatban")"><i class="fa fa-circle-o"></i> Nhà xuất bản</a></li>
+            <li><a href="@Url.Action("Index","Loaidocgia")"><i class="fa fa-circle-o"></i> Loại độc giả</a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Tài liệu</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+           
+            <li><a href="@Url.Action("Index","Tailieu")"><i class="fa fa-circle-o"></i> Tài liệu</a></li>
+            <li><a href="@Url.Action("Create","Tailieu")"><i class="fa fa-circle-o"></i> Thêm tài liệu mới</a></li>
+        </ul>
+    </li>
+    
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Độc giả</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+            <li><a href="@Url.Action("Index","Docgia")"><i class="fa fa-circle-o"></i> Độc giả</a></li>
+            @*<li><a href="@Url.Action("Deltai","Docgia")"><i class="fa fa-circle-o"></i> Thêm độc giả mới</a></li>*@
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Phiếu mượn</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+            <li><a href="@Url.Action("Index","Muontra")"><i class="fa fa-circle-o"></i> Danh sách phiếu</a></li>
+            <li><a href="@Url.Action("Phieudatra","Muontra")"><i class="fa fa-circle-o"></i> Phiếu mượn đã trả</a></li>
+            <li><a href="@Url.Action("Phieuchuatra","Muontra")"><i class="fa fa-circle-o"></i> Phiếu mượn chưa trả</a></li>
+            <li><a href="@Url.Action("Phieuquahan","Muontra")"><i class="fa fa-circle-o"></i> Phiếu mượn quá hạn</a></li>
+
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Mượn - Trả</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+            <li><a href="@Url.Action("Addthongtin","Muontra")"><i class="fa fa-circle-o"></i> Tạo phiếu</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal_tra"><i class="fa fa-circle-o"></i> Trả phiếu</a></li>
+        </ul>
+    </li>
+
+    @*<li>
+        <a href="../calendar.html">
+            <i class="fa fa-calendar"></i> <span>Calendar</span>
+            <span class="pull-right-container">
+                <small class="label pull-right bg-red">3</small>
+                <small class="label pull-right bg-blue">17</small>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="../mailbox/mailbox.html">
+            <i class="fa fa-envelope"></i> <span>Mailbox</span>
+            <span class="pull-right-container">
+                <small class="label pull-right bg-yellow">12</small>
+                <small class="label pull-right bg-green">16</small>
+                <small class="label pull-right bg-red">5</small>
+            </span>
+        </a>
+    </li>
+    <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+    <li class="header">LABELS</li>
+    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>*@
+</ul>
+
+
+@* hien thi danh sach sach: sach in, sach dien tu.
+
+    người dung vào đăng kí mượn online. sách điện tử dowload. sách thường đăng kí ngày mượn.
+    người dùng phải có tiền trong thẻ để mượn.kiểm tra the con hạn ko.
+    đăng kí ngày mượn.g dùng xem số cuồn mk đang mượn.
+
+    Admin:
+    Thống kê sách đang mượn sách trong kho.
+    thống kê trả sách ; sách hết hạn.  *@

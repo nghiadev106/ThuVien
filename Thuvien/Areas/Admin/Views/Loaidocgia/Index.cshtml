@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Project4Thuvien.Models.loaidocgia>
+
+<section class="content-header">
+    <h1>
+        Loại độc giả
+        <small>advanced loại độc giả</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        @*<li><a href="#">Tables</a></li>*@
+        <li class="active">loại độc giả</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <button type="button" onclick="return _clear();" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                        Thêm mới
+                    </button>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Loại độc giả</th>
+                                <th>Kí hiệu</th>
+                                <th>Ghi chú</th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.maloaidocgia</td>
+                                        <td>@item.tenloai</td>
+                                        <td>@item.kihieu</td>
+                                        <td>@item.ghichu</td>
+                                        <td>
+                                            <button onclick="return _getById('@item.maloaidocgia');" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></button>
+                                            <button onclick="return _delete('@item.maloaidocgia');" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="maloaidocgia" class="form-control" />
+
+                <br />
+                <label>Tên loại</label>
+                <input type="text" id="tenloai" class="form-control" />
+                <label class="label label-danger" id="er_tenloai"></label>
+                <br />
+                <label>Kí hiệu</label>
+                <input type="text" id="kihieu" class="form-control" />
+                <label class="label label-danger" id="er_kihieu"></label>
+                <br />
+                <label>Ghi chú</label>
+                @*<input type="text" id="ghichu" class="form-control" />*@
+                <textarea cols="4" rows="3" id="ghichu" class="form-control"></textarea>
+                <label class="label label-danger" id="er_ghichu"></label>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" id="btnAdd" onclick="return _add();" class="btn btn-primary">Save changes</button>
+                <button type="button" id="btnUpdate" onclick="return _edit();" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="~/scripts/loaidocgia.js"></script>

@@ -1,0 +1,198 @@
+﻿
+@{
+    ViewBag.Title = "Deltai";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model Project4Thuvien.Models.docgia
+
+<section class="content-header">
+    <h1>
+        Deltail
+        <small>advanced @Model.tendocgia</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Độc giả</a></li>
+        <li class="active">Deltail</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-md-3">
+
+                    <!-- Profile Image -->
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">
+                            <img class="profile-user-img img-responsive img-circle" src="~/Images/docgia/@Model.imgurl" alt="User profile picture">
+
+                            <h3 class="profile-username text-center">@Model.tendocgia <small> @Model.loaidocgia.tenloai</small></h3>
+
+                            @if (Model.gioitinh == true)
+                            {
+                                <p class="text-muted text-center"><i class="fa fa-mars"></i> Nam</p>
+                            }
+                            else
+                            {
+                                <p class="text-muted text-center"><i class="fa fa-mars-stroke"></i> Nữ</p>
+                            }
+
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>Ngày sinh</b> <a class="pull-right">@string.Format("{0:dd-MM-yyyy}", Model.ngaysinh)</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Địa chỉ</b> <a class="pull-right">@Model.diachi</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>SDT</b> <a class="pull-right">@Model.sdt</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Ngày lập</b> <a class="pull-right">@string.Format("{0:dd-MM-yyyy}", Model.ngaythem)</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Hạn thẻ</b> <a class="pull-right">@string.Format("{0:dd-MM-yyyy}", Model.hanthe)</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Thời gian còn lại của thẻ</b>
+                                    <a class="pull-right">
+                                        @ViewBag.ngayconlai
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <button title="Sửa @Model.tendocgia" type="button" class="col-lg-4 pull-right btn btn-success btn-sm fa fa-pencil-square-o" data-toggle="modal" data-target="#myModal" onclick="return _getById('@Model.sothe');"> cập nhập</button>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            @*<li ><a href="#activity" data-toggle="tab">Giới thiệu</a></li>*@
+                            <li class="active"><a href="#timeline" data-toggle="tab">phiếu mượn</a></li>
+                            @*<li><a href="#settings" data-toggle="tab">Settings</a></li>*@
+                        </ul>
+                        <div class="tab-content">
+                            @*<div class=" tab-pane" id="activity">
+
+                            </div>*@
+                            <!-- /.tab-pane -->
+                            <div class="active tab-pane" id="timeline">
+
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã phiếu</th>
+                                            <th>Ngày mượn</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>                  
+                                       @{
+                                           foreach (var item in Model.muontras)
+                                           {
+                                            <tr>
+                                                <td>@item.maphieu</td>
+                                                <td>@item.ngaymuon</td>
+                                                <td>
+                                                    @if (item.trangthai == true)
+                                                    {
+                                                        <label class="label label-success">đã trả</label>
+                                                    }
+                                                    @if (item.trangthai == false)
+                                                    {
+                                                        <label class="label label-danger">chưa trả</label>
+                                                    }
+                                                </td>
+                                                <td><a href="@Url.Action("Deltai","Muontra",new { id=item.maphieu})" class="btn btn-info fa fa-info-circle"></a></td>
+                                            </tr>
+                                           }
+                                    }
+
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                            <!-- /.tab-pane -->
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            @using (Html.BeginForm("Edit", "Docgia", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return _error()" }))
+            {
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Sửa thông tin</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="sothe" name="sothe" />
+                    <label>Loại độc giả</label>
+                    @Html.DropDownList("maloaidocgia", null, htmlAttributes: new { @class = "form-control" })
+                    <label>Tên độc giả</label>
+                    <input type="text" id="tendocgia" name="tendocgia" class="form-control" />
+                    <label class="label label-danger" id="er_tendocgia"></label>
+                    <br />
+                    <label>Ngày sinh</label>
+                    <input type="date" id="ngaysinh" name="ngaysinh" value="@string.Format("{0:yyyy-MM-dd}", Model.ngaysinh)" class="form-control" />
+                    <label class="label label-danger" id="er_ngaysinh"></label>
+                    <br />
+                    <label>Địa chỉ</label>
+                    <input type="text" id="diachi" name="diachi" class="form-control" />
+                    <label class="label label-danger" id="er_diachi"></label>
+                    <br />
+                    <label>Số điện thoại</label>
+                    <input type="text" id="sdt" name="sdt" class="form-control" />
+                    <label class="label label-danger" id="er_sdt"></label>
+                    <br />
+                    <label>Giới tính</label><br />
+                    <select name="gioitinh" class="form-control">
+                        <option value="true" @ViewBag.nam>Nam</option>
+                        <option value="false" @ViewBag.nu>Nữ</option>
+                    </select>
+                    <br />
+
+                    <label>Ảnh đại diện</label>
+                    <input type="file" id="imgurl" name="imgurl" class="form-control" />
+                    <label class="label label-danger" id="er_imgurl"></label>
+                    <br />
+                    <label>Trạng thái</label>
+                    <select name="trangthai" class="form-control">
+                        <option value="true" @ViewBag.active>active</option>
+                        <option value="false" @ViewBag.block>block</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="submit" id="btnAdd" class="btn btn-primary">Save changes</button>
+                </div>
+            }
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script src="~/scripts/docgia.js"></script>

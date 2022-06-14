@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Project4Thuvien.Models.sach>
+
+<section class="content-header">
+    <h1>
+        Tài liệu
+        <small>advanced Tài liệu</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        @*<li><a href="#">Tables</a></li>*@
+        <li class="active">Tài liệu</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <a href="#" class="btn btn-default btn-sm" >Thêm mới</a>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên Tài liệu</th>
+                                <th>ISBN</th>
+                                <th>Ngày thêm</th>
+                                <th>Số trang</th>
+                                <th>Năm xuất bản</th>
+                                <th>Số lần tái bản</th>
+                                <th>Giá bìa</th>
+                                <th>Ảnh minh họa</th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int stt = 0;
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.Raw(stt = stt + 1)</td>
+                                        <td>@item.tensach</td>
+                                        <td>@item.ISBN</td>
+                                        <td>@item.ngaythem</td>
+                                        <td>@item.sotrang</td>
+                                        <td>@item.namxuatban</td>
+                                        <td>@item.solantaiban</td>
+                                        <td>@item.giabia</td>
+                                        <td>
+                                            <img src="~/Images/sach/@item.imgurl" class="img-responsive"style="max-height:100px" alt="User profile picture"/>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Deltai","Tailieu",new { id=item.masach})" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
+                                            <a href="@Url.Action("Edit","Tailieu",new { masach=item.masach})" class="btn btn-success btn-sm">Edit</a>
+                                            <button onclick="return _delete('@item.masach');" class="btn btn-danger btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<script src="~/scripts/tailieu.js"></script>

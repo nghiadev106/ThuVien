@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Deltai";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var mcb = (List<Project4Thuvien.Models.kihieucabiet>)ViewBag.mcb;
+}
+@model Project4Thuvien.Models.sach
+
+<section class="content-header">
+    <h1>
+        Deltail
+        <small> @Model.tensach</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Tài liệu</a></li>
+        <li class="active">Deltail</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-md-3">
+
+                    <!-- Profile Image -->
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="~/Images/sach/@Model.imgurl" alt="@Model.tensach" style="width:100%" />
+                                    <div class="caption">
+                                        <p>@Model.tensach</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#activity" data-toggle="tab">Thông tin chi tiết</a></li>
+                            <li><a href="#timeline" data-toggle="tab">Nội dung tóm tắt</a></li>
+                            <li><a href="#mcb" data-toggle="tab">Kí hiệu cá biệt</a></li>
+                            @*<li><a href="#settings" data-toggle="tab">Settings</a></li>*@
+                        </ul>
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <div class="container col-md-6">
+                                            <div class="panel-body">
+                                                <ul class="list-group list-group-unbordered">
+                                                    <li class="list-group-item">
+                                                        <b>Tên Tài Liệu</b> <a class="pull-right">@Model.tensach</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>ISBN</b> <a class="pull-right">@Model.ISBN</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Thể Loại</b> <a class="pull-right">@Model.theloai.tentheloai</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Số Trang</b> <a class="pull-right">@Model.sotrang</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Năm Xuất Bản</b> <a class="pull-right">@Model.namxuatban</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Số Lần Tái Bản</b> <a class="pull-right">@Model.solantaiban</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Giá Bìa</b> <a class="pull-right">@Model.giabia</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Ngày Thêm</b> <a class="pull-right">@string.Format("{0:dd-MM-yyyy}", Model.ngaythem)</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Kho</b> <a class="pull-right">@Model.kho.tenkho</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Tác Giả</b> <a class="pull-right">@Model.tacgia.tentacgia</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Ngôn Ngữ</b> <a class="pull-right">@Model.ngonngu.tenngonngu</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Nhà Cung Cấp</b> <a class="pull-right">@Model.ncc.tenncc</a>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b>Nhà Xuất Bản</b> <a class="pull-right">@Model.nxb.tennxb</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="timeline">
+                                @Html.Raw(Model.tomtatnoidung)
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="mcb">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã cá biệt</th>
+                                            <th>Trạng thái</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                            @foreach (var item in mcb)
+                                            {
+                                                <tr>
+                                                    <td>@item.macabiet</td>
+                                               
+                                                    <td>
+                                                        @if (item.trangthai == true)
+                                                        {
+                                                            <label class="label label-success">chưa mượn</label>
+                                                        }
+                                                        @if (item.trangthai == false)
+                                                        {
+                                                            <label class="label label-danger">đã mượn</label>
+                                                        }
+                                                    </td>
+                                                    <td>
+                                                        @*<button onclick="return _getById('@item.macabiet');" class="btn btn-success btn-sm">Edit</button>*@
+                                                        <button onclick="return _delete_mcb('@item.macabiet');" class="btn btn-danger btn-sm">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-footer">
+                    <a href="@Url.Action("Index","Tailieu")" class="btn btn-primary fa fa-backward"> danh sách bài viết</a>
+                    <button class="btn btn-success btn-sm fa fa-plus" onclick="return _CreateMCB('@Model.masach')"> Thêm mã cá biệt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+
+<script src="~/scripts/tailieu.js"></script>
+

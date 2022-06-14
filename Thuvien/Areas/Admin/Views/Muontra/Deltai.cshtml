@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "Deltai";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model Project4Thuvien.Models.muontra
+
+<section class="content-header">
+    <h1>
+        Phiếu mượn @Model.maphieu ( @Model.docgia.tendocgia )
+    </h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-9">
+                <div class="box">
+                    <div class="box-header">
+                        @*@{
+                            if (Model.trangthai != 4)
+                            {
+                                <p>Trạng thái đơn hàng : </p>
+                                <button class="btn btn-success btn-sm" onclick="return _danggiao('@Model.madh',2)">đang giao hàng</button>
+                                <button class="btn btn-info btn-sm" onclick="return _danggiao('@Model.madh',3)">hoàn tất</button>
+                                <button class="btn btn-danger btn-sm" onclick="return _danggiao('@Model.madh',4)">hủy bỏ</button>
+                            }
+                        }*@
+
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên sách</th>
+                                    <th>Mã cá biệt</th>
+                                    <th>Ngày trả</th>
+                                    <th>option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int stt = 0;
+                                    foreach (var item in Model.chitietmuontras)
+                                    {
+                                        <tr>
+                                            <td><label class="label label-info">@Html.Raw(stt = stt + 1)</label></td>
+                                           
+                                            <td><label class="label label-primary">@item.sach.tensach</label></td>
+                                            <td><label class="label label-warning">@item.macabiet</label></td>
+                                            <td>
+                                                @if (item.trangthai == true)
+                                                {
+                                                    <label class="label label-success">@string.Format("{0:dd-MM-yyyy}", item.ngaytra)</label>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (item.trangthai == true)
+                                                {
+                                                    @*<button type="button" onclick="return _status('@item.id')" class="label label-success btn-link">đã trả</button>*@
+                                                    <label class="label label-success">đã trả</label>
+                                                }
+                                                @if (item.trangthai == false)
+                                                {
+                                                    <button type="button" onclick="return _status('@item.id')" class="label label-danger btn-link">trả sách</button>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="panel-body">
+                            <button type="button" onclick="return _delete('@Model.maphieu')" class="btn btn-sm btn-danger pull-right fa fa-times"> xóa phiếu</button>
+                            <a href="@Url.Action("Index", "Muontra")" class="btn btn-primary btn-sm pull-left fa fa-backward"> Danh sách phiếu mượn</a>
+                         
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel">
+                    <div class="panel-body">
+                        <h4>
+                            Phiếu nhập :
+                            @{
+                                if (Model.trangthai == true)
+                                {
+                                    <small class="label pull-right bg-blue">hoàn thành</small>
+                                }
+                                if (Model.trangthai == false)
+                                {
+                                    <small class="label pull-right bg-red">chưa hoàn thành</small>
+                                }
+                            }
+
+                        </h4>
+                        <p>Độc giả: <label class="label label-warning">@{@Model.docgia.tendocgia} @Model.sothe</label></p>
+                        <p>Ngày tạo: <label class="label label-info">@string.Format("{0:dd-MM-yyyy}", Model.ngaymuon)</label></p>
+                        <p>Hạn trả: <label class="label label-success">@string.Format("{0:dd-MM-yyyy}", Model.hantra)</label></p>
+                        <p>Ghi chú : @Model.ghichu</p>
+                        <h4>Lịch sử</h4>
+                        @Html.Raw(Model.lichsu)
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+<script>
+    function _status(id) {
+        $.ajax({
+            url: '@Url.Action("Status","Muontra")',
+            type: 'POST',
+            datatype: 'JSON',
+            data: {
+                id: id
+            },
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+            },
+            error: function (data) {
+
+            }
+        });
+    }
+
+    function _delete(id) {
+        var cf = confirm("bạn muốn làm điều này");
+        if (cf) {
+            $.ajax({
+                url: '@Url.Action("DeleteP","Muontra")',
+                type: 'POST',
+                datatype: 'JSON',
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    if (data.success == true) {
+                        window.location = '@Url.Action("Index", "Muontra")';
+                    }
+                },
+                error: function (data) {
+                    alert('xảy ra lỗi');
+                }
+            });
+        }
+    }
+</script>

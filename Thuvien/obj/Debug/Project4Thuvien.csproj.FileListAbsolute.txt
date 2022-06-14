@@ -1,0 +1,152 @@
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\ApplicationInsights.config
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\csc.exe
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\System.Collections.Immutable.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\System.Reflection.Metadata.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\vbc.exe
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\VBCSCompiler.exe
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\roslyn\VBCSCompiler.exe.config
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.dll.config
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.pdb
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Agent.Intercept.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.DependencyCollector.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Web.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.WindowsServer.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.ApplicationInsights.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.Web.Infrastructure.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Helpers.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Mvc.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Razor.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Deployment.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Razor.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.DependencyCollector.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Web.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.WindowsServer.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.ApplicationInsights.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Razor.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Deployment.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Razor.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Helpers.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\System.Web.Mvc.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.pdb
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\EntityFramework.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\EntityFramework.SqlServer.dll
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\EntityFramework.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\bin\EntityFramework.SqlServer.xml
+E:\HỌC TẬP\MVC\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\ApplicationInsights.config
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\csc.exe
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\vbc.exe
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.dll.config
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.pdb
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Web.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Helpers.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Mvc.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Razor.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Razor.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Web.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Razor.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Razor.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Helpers.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Mvc.xml
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.dll
+C:\Users\Admin\Downloads\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.pdb
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\ApplicationInsights.config
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\csc.exe
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\System.Collections.Immutable.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\System.Reflection.Metadata.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\vbc.exe
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\VBCSCompiler.exe
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\roslyn\VBCSCompiler.exe.config
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.dll.config
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Project4Thuvien.pdb
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.SqlServer.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Agent.Intercept.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.DependencyCollector.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Web.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.WindowsServer.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.ApplicationInsights.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.Web.Infrastructure.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Helpers.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Mvc.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Razor.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Deployment.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Razor.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\EntityFramework.SqlServer.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.DependencyCollector.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.Web.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.AI.WindowsServer.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.ApplicationInsights.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Razor.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Deployment.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Webpages.Razor.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Helpers.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\bin\System.Web.Mvc.xml
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.csproj.CoreCompileInputs.cache
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.csproj.CopyComplete
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.dll
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.pdb
+D:\nghia\ASP.NET MVC\101151_10515064_LeVanLong_QuanlithuvienUTEHY\Project4Thuvien\Project4Thuvien\obj\Debug\Project4Thuvien.csprojAssemblyReference.cache

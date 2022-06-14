@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Project4Thuvien.Models.nguoidung>
+
+
+<section class="content-header">
+    <h1>
+        Admin
+        <small>advanced admin</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        @*<li><a href="#">Tables</a></li>*@
+        <li class="active">admin</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="panel">
+            <div class="panel-body">
+                <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#myModal">Tạo tài khoản mới</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @{
+            foreach (var item in Model)
+            {
+                <div class="col-xs-3">
+                    <!-- Profile Image -->
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">     
+                            <img class="profile-user-img img-responsive img-circle" src="~/Images/admin/@item.imgurl" alt="User profile picture">
+                            <h3 class="profile-username text-center">@item.username</h3>
+                            <p class="text-muted text-center">@item.name</p>
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>Tài khoản</b> <a class="pull-right">@item.username</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Mật khẩu</b> <a class="pull-right">@item.password</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Địa chỉ</b> <a class="pull-right">@item.diachi</a>
+                                </li>
+                            </ul>
+                            
+                            <button onclick="return _delete('@item.id')" class="btn btn-primary btn-block"><b>xóa</b></button>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+        <!-- /.col -->
+            }
+        }
+    </div>
+    <!-- /.row -->
+</section>
+
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @using (Html.BeginForm("Create", "Admin",FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return _error()" }))
+            {
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+                <label>Username</label>
+                <input type="text" id="username" name="username" class="form-control" />
+                <label class="label label-danger" id="er_username"></label>
+                <br />
+                <label>Password</label>
+                <input type="password" id="password" name="password" class="form-control" />
+                <label class="label label-danger" id="er_password"></label>
+                <br />
+                <label>Name</label>
+                <input type="text" id="name" name="name" class="form-control" />
+                <label class="label label-danger" id="er_name"></label>
+                <br />
+                <label>Địa chỉ</label>
+                <input type="text" id="diachi" name="diachi" class="form-control" />
+                <label class="label label-danger" id="er_diachi"></label>
+                <br />
+                <label>Ảnh đại diện</label>
+                <input type="file" id="imgurl" name="imgurl" class="form-control" />
+                <label class="label label-danger" id="er_imgurl"></label>
+                
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" id="btnAdd"  class="btn btn-primary">Save changes</button>
+            </div>
+            }
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script>
+
+    function _delete(id) {
+        var cf = confirm("bạn có muốn xóa người dùng này");
+        if (cf) {
+            $.ajax({
+                url: '@Url.Action("Delete","Admin")',
+                type: 'POST',
+                datatype: 'JSON',
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    //if (data.success == true) {
+                    //    alert(data.ms);
+                    //}
+                    //if (data.success == false) {
+                    //    alert(data.ms);
+                    //}
+                    alert(data.ms);
+                },
+                error: function (data) {
+                    alert('xảy ra lỗi');
+                }
+            });
+        }
+    }
+
+    @*function _add() {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var name = $('#name').val();
+        var diachi = $('#diachi').val();
+        var fileUpload = $("#imgurl").get(0);
+        var imgurl = fileUpload.files;
+        $.ajax({
+            url: '@Url.Action("Create", "Admin")',
+            type: 'POST',
+            datatype: 'JSON',
+            data: {
+                username: username,
+                password: password,
+                name: name,
+                diachi: diachi,
+                imgurl: imgurl
+            },
+            success: function (data) {
+                //if (data.success == true) {
+                //    alert(data.ms);
+                //}
+                //if (data.success == false) {
+                //    alert(data.ms);
+                //}
+                alert(data.ms);
+            },
+            error: function (data) {
+                alert('xảy ra lỗi');
+            }
+        });
+    }*@
+</script>
+<script src="~/scripts/admin.js"></script>
